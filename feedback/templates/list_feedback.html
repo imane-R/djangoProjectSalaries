@@ -1,0 +1,13 @@
+<h2>Feedbacks pour : {{ job.job_title.name }}</h2>
+
+<ul>
+    {% for fb in feedbacks %}
+        <li><strong>{{ fb.author_name }}</strong> : {{ fb.comment }} ({{ fb.rating }}/5)</li>
+    {% empty %}
+        <li>Aucun feedback disponible.</li>
+    {% endfor %}
+</ul>
+
+<a href="/jobs/">⬅ Retour à la liste des jobs</a>
+<a href="{% url 'add_feedback' job.id %}">➕ Ajouter un feedback</a>
+

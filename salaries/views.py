@@ -13,6 +13,9 @@ def dashboard(request):
         "countries_covered": countries_covered,
     }
     return render(request, "dashboard.html", context)
-from django.shortcuts import render
+
 
 # Create your views here.
+def job_list(request):
+    jobs = JobRecord.objects.all()
+    return render(request, 'job_list.html', {'jobs': jobs})
