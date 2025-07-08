@@ -1,0 +1,108 @@
+🔝 Top 5 job titles les mieux payés (en USD):
+- Research Team Lead: 560000.0 USD
+- Analytics Engineering Manager: 399880.0 USD
+- ML Infrastructure Engineer: 396875.0 USD
+- Data Science Tech Lead: 375000.0 USD
+- Machine Learning Performance Engineer: 345000.0 USD
+
+📈 Salaire moyen par niveau d’expérience :
+- : 117763.98 USD
+
+🌍 Nombre de jobs par pays (company_location):
+- US: 640 jobs
+- CA: 279 jobs
+- GB: 245 jobs
+- DE: 97 jobs
+- AU: 83 jobs
+- IN: 72 jobs
+- FR: 71 jobs
+- NL: 69 jobs
+- ES: 57 jobs
+- LT: 49 jobs
+- AT: 49 jobs
+- SK: 38 jobs
+- PL: 38 jobs
+- MX: 37 jobs
+- BR: 37 jobs
+- IE: 36 jobs
+- LV: 33 jobs
+- PT: 32 jobs
+- IT: 28 jobs
+- FI: 21 jobs
+- CH: 21 jobs
+- ZA: 20 jobs
+- PH: 20 jobs
+- JP: 18 jobs
+- NZ: 17 jobs
+- AR: 17 jobs
+- CO: 16 jobs
+- SG: 15 jobs
+- BE: 15 jobs
+- GR: 14 jobs
+- EG: 12 jobs
+- TR: 11 jobs
+- NG: 10 jobs
+- CL: 10 jobs
+- UA: 9 jobs
+- CZ: 9 jobs
+- SE: 8 jobs
+- DK: 8 jobs
+- RU: 7 jobs
+- RO: 7 jobs
+- MT: 7 jobs
+- IL: 7 jobs
+- HU: 7 jobs
+- EE: 7 jobs
+- CY: 7 jobs
+- SI: 6 jobs
+- LU: 6 jobs
+- KR: 6 jobs
+- KE: 6 jobs
+- TW: 5 jobs
+- PR: 5 jobs
+- NO: 5 jobs
+- LB: 5 jobs
+- EC: 5 jobs
+- AE: 5 jobs
+- SV: 4 jobs
+- MK: 4 jobs
+- ID: 4 jobs
+- HR: 4 jobs
+- AS: 4 jobs
+- AM: 4 jobs
+- TH: 3 jobs
+- SA: 3 jobs
+- RS: 3 jobs
+- PK: 3 jobs
+- PE: 3 jobs
+- HK: 3 jobs
+- GH: 3 jobs
+- DZ: 3 jobs
+- DO: 3 jobs
+- CR: 3 jobs
+- BG: 3 jobs
+- MY: 2 jobs
+- JM: 2 jobs
+- HN: 2 jobs
+- CD: 2 jobs
+- BA: 2 jobs
+- ZM: 1 jobs
+- XK: 1 jobs
+- VN: 1 jobs
+- VE: 1 jobs
+- QA: 1 jobs
+- PA: 1 jobs
+- OM: 1 jobs
+- MU: 1 jobs
+- MD: 1 jobs
+- LS: 1 jobs
+- JO: 1 jobs
+- IR: 1 jobs
+- IQ: 1 jobs
+- GI: 1 jobs
+- CN: 1 jobs
+- CF: 1 jobs
+- BS: 1 jobs
+- AD: 1 jobs
+
+💻 Jobs 100% remote : 713 / 2449 (29.11%)
