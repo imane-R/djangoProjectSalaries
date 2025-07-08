@@ -5,16 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4c292e68-7264-46a9-94db-6fa7fc23e4e7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/DjangoProjectSalaries.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DjangoProjectSalaries.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/import_jobs.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/salaries.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DjangoProjectSalaries/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoProjectSalaries/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/salaries/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/salaries/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/salaries/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/salaries/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -45,6 +51,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="DjangoProjectSalaries" type="Python.DjangoServer" factoryName="Django server">
       <module name="DjangoProjectSalaries" />
@@ -86,7 +97,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1751961045900</updated>
-      <workItem from="1751961046975" duration="3002000" />
+      <workItem from="1751961046975" duration="6104000" />
     </task>
     <servers />
   </component>
