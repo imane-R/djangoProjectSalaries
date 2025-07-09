@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     "django.contrib.admin",
     "salaries",
     "feedback",
+    "rest_framework",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
