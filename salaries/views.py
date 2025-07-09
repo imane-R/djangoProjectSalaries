@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import JobRecord
 from django.db.models import Avg, Count
+from django.core.paginator import Paginator
 
 def dashboard(request):
     total_jobs = JobRecord.objects.count()
@@ -16,6 +17,14 @@ def dashboard(request):
 
 
 # Create your views here.
+
 def job_list(request):
-    jobs = JobRecord.objects.all()
-    return render(request, 'job_list.html', {'jobs': jobs})
+    min_rating = request.GET.get("min_rating")
+    jobs = JobRecord.objects.annotate(
+        feedback_count=Count("feedbacks"),
+        average_rating=Avg("feedbacks__rating")
+    )
+    if min_rating:
+        jobs = jobs.filter(average_rating__gte=min_rating)
+
+    return render(request, "job_list.html", {"jobs": jobs})

@@ -1,17 +1,52 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Liste des Jobs</title>
-</head>
-<body>
-    <h1>Liste des offres d'emploi</h1>
-    <ul>
+
+
+{% block content %}
+<h1>Liste des offres</h1>
+    <form method="get">
+    <label for="min_rating">Note minimale :</label>
+    <input type="number" name="min_rating" min="1" max="5" step="0.1" value="{{ request.GET.min_rating }}">
+    <button type="submit">Filtrer</button>
+</form>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Titre du poste</th>
+            <th>Lieu de l'entreprise</th>
+            <th>Salaire (USD)</th>
+            <th>Année de travail</th>
+            <th>Note</th>
+        </tr>
+    </thead>
+    <tbody>
         {% for job in jobs %}
-            <li>
-                <strong>{{ job.job_title.name }}</strong> - {{ job.salary_in_usd }} USD
-                <a href="{% url 'list_feedback' job.id %}">Voir les feedbacks</a>
-            </li>
+        <tr>
+            <td>
+                <a href="{% url 'list_feedback' job.id %}">{{ job.job_title.name }}</a>
+            </td>
+            <td>{{ job.company_location }}</td>
+            <td>{{ job.salary_in_usd }}</td>
+            <td>{{ job.year }}</td>
+            <td>{{ job.feedback_count }}</td>
+        </tr>
         {% endfor %}
-    </ul>
-</body>
-</html>
+    </tbody>
+</table>
+
+<div>
+    {% if jobs.has_previous %}
+        <a href="?page={{ jobs.previous_page_number }}">Précédent</a>
+    {% endif %}
+
+    Page {{ jobs.number }} sur {{ jobs.paginator.num_pages }}
+
+    {% if jobs.has_next %}
+        <a href="?page={{ jobs.next_page_number }}">Suivant »</a>
+    {% endif %}
+</div>
+
+<br>
+<a href="{% url 'dashboard' %}">Retour au tableau de bord</a>
+{% endblock %}
+
+
