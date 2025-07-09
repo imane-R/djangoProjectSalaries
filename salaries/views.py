@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from .models import JobRecord
 from django.db.models import Avg, Count
+from rest_framework import viewsets
+from .models import JobRecord, Contract, Industry, Candidate
+from .serializer import JobRecordSerializer, ContractSerializer, IndustrySerializer, CandidateSerializer
 from django.core.paginator import Paginator
 
 def dashboard(request):
@@ -28,3 +31,20 @@ def job_list(request):
         jobs = jobs.filter(average_rating__gte=min_rating)
 
     return render(request, "job_list.html", {"jobs": jobs})
+
+
+class JobRecordViewSet(viewsets.ModelViewSet):
+    queryset = JobRecord.objects.all()
+    serializer_class = JobRecordSerializer
+
+class ContractViewSet(viewsets.ModelViewSet):
+    queryset = Contract.objects.all()
+    serializer_class = ContractSerializer
+
+class IndustryViewSet(viewsets.ModelViewSet):
+    queryset = Industry.objects.all()
+    serializer_class = IndustrySerializer
+
+class CandidateViewSet(viewsets.ModelViewSet):
+    queryset = Candidate.objects.all()
+    serializer_class = CandidateSerializer

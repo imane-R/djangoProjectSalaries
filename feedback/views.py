@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Feedback
 from salaries.models import JobRecord
 from django.utils import timezone
+from rest_framework import viewsets
+from .serializers import FeedbackSerializer
 
 def list_feedback(request, job_id):
     job = get_object_or_404(JobRecord, id=job_id)
@@ -31,3 +33,6 @@ def add_feedback(request, job_id):
 
     return render(request, 'add_feedback.html', {"job": job})
 
+class FeedbackViewSet(viewsets.ModelViewSet):
+    queryset = Feedback.objects.all()
+    serializer_class = FeedbackSerializer

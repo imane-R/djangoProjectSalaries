@@ -58,7 +58,7 @@ class Candidate(models.Model):
 
 
 # --------------------------
-# Modèle complémentaire : 
+# Modèle complémentaire :
 # --------------------------
 
 class Category(models.Model):

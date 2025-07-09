@@ -48,13 +48,12 @@ class JobRecordSerializer(serializers.ModelSerializer):
         model = JobRecord
         fields = [
             "id",
-            "work_year", "experience_level",
+            "year", "experience_level",
             "contract",
-            "job_title", "department",
+            "job_title", "job_title",
             "industry",
-            "salary", "salary_currency", "salary_in_usd",
+            "salary_in_usd", "salary_in_usd",
             "employee_residence", "remote_ratio",
-            "company_location", "company_size",
-            "candidate",
-            "skills",
+            "company_location",
+            "candidate"
         ]

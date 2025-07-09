@@ -5,14 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4c292e68-7264-46a9-94db-6fa7fc23e4e7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/feedback/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/salaries/serializer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DjangoProjectSalaries/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoProjectSalaries/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/salaries/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/salaries/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DjangoProjectSalaries/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/DjangoProjectSalaries/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feedback/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/feedback/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feedback/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/feedback/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/salaries/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/salaries/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salaries/serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/salaries/serializer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salaries/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/salaries/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salaries/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/salaries/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +107,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1751961045900</updated>
-      <workItem from="1751961046975" duration="32022000" />
+      <workItem from="1751961046975" duration="35682000" />
     </task>
     <servers />
   </component>
@@ -121,6 +121,11 @@
           <url>file://$PROJECT_DIR$/manage.py</url>
           <line>2</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/feedback/views.py</url>
+          <line>9</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
