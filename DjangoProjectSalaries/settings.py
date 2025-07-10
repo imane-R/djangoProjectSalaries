@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     "django.contrib.admin",
     "salaries",
     "feedback",
+    "rest_framework.authtoken",
     "rest_framework",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -83,6 +84,15 @@ DATABASES = {
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ]
+}
+
 
 
 # Password validation

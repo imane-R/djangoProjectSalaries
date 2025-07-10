@@ -5,6 +5,7 @@ from rest_framework import viewsets
 from .models import JobRecord, Contract, Industry, Candidate
 from .serializer import JobRecordSerializer, ContractSerializer, IndustrySerializer, CandidateSerializer
 from django.core.paginator import Paginator
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 def dashboard(request):
     total_jobs = JobRecord.objects.count()
@@ -33,9 +34,13 @@ def job_list(request):
     return render(request, "job_list.html", {"jobs": jobs})
 
 
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
+
 class JobRecordViewSet(viewsets.ModelViewSet):
     queryset = JobRecord.objects.all()
     serializer_class = JobRecordSerializer
+    permission_classes = [IsAuthenticatedOrReadOnly]
+
 
 class ContractViewSet(viewsets.ModelViewSet):
     queryset = Contract.objects.all()
