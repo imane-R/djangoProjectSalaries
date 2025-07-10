@@ -1,12 +1,15 @@
 <h2>Feedbacks pour : {{ job.job_title.name }}</h2>
+{% for fb in feedbacks %}
+    <div class="p-4 bg-gray-100 border rounded">
+        <p class="font-semibold">{{ fb.author_name }} <span class="text-sm text-gray-500">({{ fb.rating }}/5)</span></p>
+        <p class="text-gray-700">{{ fb.comment }}</p>
+        <p class="text-xs text-gray-400 mt-1">{{ fb.created_at }}</p>
+    </div>
+{% empty %}
+    <p class="text-gray-500">Aucun commentaire pour ce job.</p>
+{% endfor %}
 
-<ul>
-    {% for fb in feedbacks %}
-        <li><strong>{{ fb.author_name }}</strong> : {{ fb.comment }} ({{ fb.rating }}/5)</li>
-    {% empty %}
-        <li>Aucun feedback disponible.</li>
-    {% endfor %}
-</ul>
+`+çnè!n!uàj!
 
 <a href="/jobs/">⬅ Retour à la liste des jobs</a>
 <a href="{% url 'add_feedback' job.id %}">➕ Ajouter un feedback</a>
