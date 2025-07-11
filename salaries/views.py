@@ -24,14 +24,29 @@ def dashboard(request):
 
 def job_list(request):
     min_rating = request.GET.get("min_rating")
+
     jobs = JobRecord.objects.annotate(
         feedback_count=Count("feedbacks"),
         average_rating=Avg("feedbacks__rating")
     )
-    if min_rating:
-        jobs = jobs.filter(average_rating__gte=min_rating)
 
-    return render(request, "job_list.html", {"jobs": jobs})
+    if min_rating:
+        try:
+            min_rating_float = float(min_rating)
+            jobs = jobs.filter(average_rating__gte=min_rating_float)
+        except ValueError:
+            pass  # si utilisateur entre un texte invalide, on ignore le filtre
+
+    # PAGINATION
+    paginator = Paginator(jobs, 5)  # 5 jobs par page
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+
+    context = {
+        "jobs": page_obj,
+        "min_rating": min_rating,
+    }
+    return render(request, "job_list.html", context)
 
 
 from rest_framework.permissions import IsAuthenticatedOrReadOnly

@@ -5,6 +5,7 @@
         <p class="text-gray-700">{{ fb.comment }}</p>
         <p class="text-xs text-gray-400 mt-1">{{ fb.created_at }}</p>
     </div>
+    <div id="feedback-list" data-jobid="{{ job.id }}"></div>
 {% empty %}
     <p class="text-gray-500">Aucun commentaire pour ce job.</p>
 {% endfor %}

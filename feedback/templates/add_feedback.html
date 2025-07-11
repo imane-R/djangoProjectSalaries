@@ -11,7 +11,7 @@
   <div class="max-w-2xl mx-auto">
     <h1 class="text-2xl font-bold mb-4">Feedbacks</h1>
 
-    <div id="feedback-list" class="space-y-3 mb-6"></div>
+    <div id="feedback-list" data-jobid="{{ job.id }}"></div>
 
     <form id="feedback-form" data-jobid="{{ job.id }}" class="bg-white p-4 rounded shadow space-y-3">
       <input name="author_name" placeholder="Votre nom"

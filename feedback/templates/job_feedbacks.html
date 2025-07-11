@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Feedbacks par Job</title>
+  <script src="{% static 'javascript/feedback.js' %}" defer></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="p-6 bg-gray-100">
+ <h1 class="text-xl font-bold mb-4">Consulter les feedbacks par poste</h1>
+
+<label for="job-select">Sélectionnez un poste :</label>
+<select id="job-select" class="border p-2 rounded">
+  {% for job in jobs %}
+    <option value="{{ job.id }}">{{ job.title }}</option>
+  {% endfor %}
+</select>
+
+<h2 id="job-title" class="mt-6 text-lg font-semibold"></h2>
+<p id="avg-rating" class="mb-4"></p>
+
+<div id="feedback-list" class="space-y-4"></div>
+
+</body>
+</html>

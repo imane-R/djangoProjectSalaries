@@ -1,52 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Liste des Offres</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
 
+  <div class="max-w-5xl mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold mb-6 text-gray-800">Liste des Offres</h1>
 
-{% block content %}
-<h1>Liste des offres</h1>
-    <form method="get">
-    <label for="min_rating">Note minimale :</label>
-    <input type="number" name="min_rating" min="1" max="5" step="0.1" value="{{ request.GET.min_rating }}">
-    <button type="submit">Filtrer</button>
-</form>
+    <!-- Formulaire de filtre -->
+    <form method="get" class="mb-6 flex items-center space-x-4">
+      <label for="min_rating" class="text-gray-700 font-medium">Note minimale :</label>
+      <input type="number" name="min_rating" min="1" max="5" step="0.1"
+             value="{{ request.GET.min_rating }}"
+             class="w-24 px-3 py-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring focus:border-blue-400">
+      <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+        Filtrer
+      </button>
+    </form>
 
-<table border="1">
-    <thead>
-        <tr>
-            <th>Titre du poste</th>
-            <th>Lieu de l'entreprise</th>
-            <th>Salaire (USD)</th>
-            <th>Année de travail</th>
-            <th>Note</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for job in jobs %}
-        <tr>
-            <td>
-                <a href="{% url 'list_feedback' job.id %}">{{ job.job_title.name }}</a>
+    <!-- Tableau des jobs -->
+    <div class="overflow-x-auto">
+      <table class="min-w-full bg-white border border-gray-300 rounded shadow">
+        <thead class="bg-gray-100">
+          <tr class="text-left">
+            <th class="px-4 py-2 border-b">Titre du poste</th>
+            <th class="px-4 py-2 border-b">Lieu</th>
+            <th class="px-4 py-2 border-b">Salaire (USD)</th>
+            <th class="px-4 py-2 border-b">Année</th>
+            <th class="px-4 py-2 border-b">Nb. Feedbacks</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for job in jobs %}
+          <tr class="hover:bg-gray-50">
+            <td class="px-4 py-2 border-b">
+              <a href="{% url 'list_feedback' job.id %}" class="text-blue-600 hover:underline">
+                {{ job.job_title.name }}
+              </a>
             </td>
-            <td>{{ job.company_location }}</td>
-            <td>{{ job.salary_in_usd }}</td>
-            <td>{{ job.year }}</td>
-            <td>{{ job.feedback_count }}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+            <td class="px-4 py-2 border-b">{{ job.company_location }}</td>
+            <td class="px-4 py-2 border-b">{{ job.salary_in_usd }}</td>
+            <td class="px-4 py-2 border-b">{{ job.year }}</td>
+            <td class="px-4 py-2 border-b text-center">{{ job.feedback_count }}</td>
+          </tr>
+          {% empty %}
+          <tr>
+            <td colspan="5" class="px-4 py-4 text-center text-gray-500">Aucune offre trouvée.</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
 
-<div>
-    {% if jobs.has_previous %}
-        <a href="?page={{ jobs.previous_page_number }}">Précédent</a>
-    {% endif %}
+    <!-- Pagination -->
+    <div class="mt-6 flex justify-between items-center">
+      {% if jobs.has_previous %}
+        <a href="?page={{ jobs.previous_page_number }}{% if request.GET.min_rating %}&min_rating={{ request.GET.min_rating }}{% endif %}"
+           class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">
+          ← Précédent
+        </a>
+      {% else %}
+        <span></span>
+      {% endif %}
 
-    Page {{ jobs.number }} sur {{ jobs.paginator.num_pages }}
+      <span class="text-gray-600">
+        Page {{ jobs.number }} sur {{ jobs.paginator.num_pages }}
+      </span>
 
-    {% if jobs.has_next %}
-        <a href="?page={{ jobs.next_page_number }}">Suivant »</a>
-    {% endif %}
-</div>
+      {% if jobs.has_next %}
+        <a href="?page={{ jobs.next_page_number }}{% if request.GET.min_rating %}&min_rating={{ request.GET.min_rating }}{% endif %}"
+           class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">
+          Suivant →
+        </a>
+      {% else %}
+        <span></span>
+      {% endif %}
+    </div>
 
-<br>
-<a href="{% url 'dashboard' %}">Retour au tableau de bord</a>
-{% endblock %}
+    <!-- Lien retour -->
+    <div class="mt-8">
+      <a href="{% url 'dashboard' %}" class="text-blue-600 hover:underline">⬅ Retour au tableau de bord</a>
+    </div>
+  </div>
 
-
+</body>
+</html>
